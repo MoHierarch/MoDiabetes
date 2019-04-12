@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mo.dao.DiabetesMapper">
+  <resultMap id="BaseResultMap" type="com.mo.entity.Diabetes">
+    <result column="Pregnancies" jdbcType="DOUBLE" property="pregnancies" />
+    <result column="Glucose" jdbcType="DOUBLE" property="glucose" />
+    <result column="BloodPressure" jdbcType="DOUBLE" property="bloodpressure" />
+    <result column="SkinThickness" jdbcType="DOUBLE" property="skinthickness" />
+    <result column="Insulin" jdbcType="DOUBLE" property="insulin" />
+    <result column="BMI" jdbcType="DOUBLE" property="bmi" />
+    <result column="DiabetesPedigreeFunction" jdbcType="DOUBLE" property="diabetespedigreefunction" />
+    <result column="Age" jdbcType="DOUBLE" property="age" />
+    <result column="Outcome" jdbcType="DOUBLE" property="outcome" />
+  </resultMap>
+  <insert id="insert" parameterType="com.mo.entity.Diabetes">
+    insert into diabetes (Pregnancies, Glucose, BloodPressure, 
+      SkinThickness, Insulin, BMI, 
+      DiabetesPedigreeFunction, Age, Outcome
+      )
+    values (#{pregnancies,jdbcType=DOUBLE}, #{glucose,jdbcType=DOUBLE}, #{bloodpressure,jdbcType=DOUBLE}, 
+      #{skinthickness,jdbcType=DOUBLE}, #{insulin,jdbcType=DOUBLE}, #{bmi,jdbcType=DOUBLE}, 
+      #{diabetespedigreefunction,jdbcType=DOUBLE}, #{age,jdbcType=DOUBLE}, #{outcome,jdbcType=DOUBLE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.mo.entity.Diabetes">
+    insert into diabetes
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pregnancies != null">
+        Pregnancies,
+      </if>
+      <if test="glucose != null">
+        Glucose,
+      </if>
+      <if test="bloodpressure != null">
+        BloodPressure,
+      </if>
+      <if test="skinthickness != null">
+        SkinThickness,
+      </if>
+      <if test="insulin != null">
+        Insulin,
+      </if>
+      <if test="bmi != null">
+        BMI,
+      </if>
+      <if test="diabetespedigreefunction != null">
+        DiabetesPedigreeFunction,
+      </if>
+      <if test="age != null">
+        Age,
+      </if>
+      <if test="outcome != null">
+        Outcome,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pregnancies != null">
+        #{pregnancies,jdbcType=DOUBLE},
+      </if>
+      <if test="glucose != null">
+        #{glucose,jdbcType=DOUBLE},
+      </if>
+      <if test="bloodpressure != null">
+        #{bloodpressure,jdbcType=DOUBLE},
+      </if>
+      <if test="skinthickness != null">
+        #{skinthickness,jdbcType=DOUBLE},
+      </if>
+      <if test="insulin != null">
+        #{insulin,jdbcType=DOUBLE},
+      </if>
+      <if test="bmi != null">
+        #{bmi,jdbcType=DOUBLE},
+      </if>
+      <if test="diabetespedigreefunction != null">
+        #{diabetespedigreefunction,jdbcType=DOUBLE},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=DOUBLE},
+      </if>
+      <if test="outcome != null">
+        #{outcome,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+</mapper>
