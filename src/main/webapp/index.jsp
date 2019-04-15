@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>Bootstrap 101 Template</title>
-
+    <title>教主的糖尿病预测系统</title>
     <!-- Bootstrap -->
     <%--CSS--%>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -14,62 +13,76 @@
 
     <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <style>
+        #middle{
+            text-align: center;
+            margin:0 auto;
+            width:500px;}
+        .form-group{
+            margin:0 auto;
+            text-align: center;
+            width:300px;
+        }
+       .label-left{
+           text-align: left;
+           width:280px;
+       }
+    </style>
 
 </head>
-<body>
-<div class="site-wrapper">
-
-    <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-            <div class="masthead clearfix">
-                <div class="inner">
-                    <h3 class="masthead-brand">Cover</h3>
-                    <nav>
-                        <ul class="nav masthead-nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-
-            <div class="inner cover">
-                <h1 class="cover-heading">Cover your page.</h1>
-                <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-                <p class="lead">
-                    <a href="#" class="btn btn-lg btn-default">Learn more</a>
-                </p>
-            </div>
-
-            <h2>请输入个人信息</h2>
-            <div>
-                <form id="T" action="/MoDiabetes_war_exploded/T" method="post">
-                    壬辰：<input type="text" name="pregnancies"><br>
-                    血糖：<input type="text" name="glucose"><br>
-                    血压：<input type="text" name="bloodpressure"><br>
-                    皮脂：<input type="text" name="skinthickness"><br>
-                    胰岛素：<input type="text" name="insulin"><br>
-                    BMI：<input type="text" name="bmi"><br>
-                    糖尿病家庭指数：<input type="text" name="diabetespedigreefunction"><br>
-                    年龄：<input type="text" name="age"><br>
-                    <%--结果：<input type="text" name="outcome"><br>--%>
-                    <input type="submit" value="提交" />
-                </form>
-            </div>
-
-            <div class="mastfoot">
-                <div class="inner">
-                    <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-                </div>
-            </div>
-
+<body >
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+           <h3>&emsp;&emsp;&emsp;教主的糖尿病预测大法</h3>
         </div>
-
-    </div>
-
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/MoDiabetes_war_exploded/index.jsp">预测</a></li>
+                <li><a href="https://baike.baidu.com/item/%E7%B3%96%E5%B0%BF%E7%97%85/100969?fr=aladdin">百科</a></li>
+                <li><a href="http://www.cyberpolice.cn/wfjb/">反馈</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="jumbotron" id="middle">
+    <form id="T" action="/MoDiabetes_war_exploded/T" method="post">
+        <div class="form-group">
+            <label class="label-left">壬辰：</label>
+            <input type="text" class="form-control" name="pregnancies" placeholder="壬辰" >
+        </div>
+        <div class="form-group">
+            <label class="label-left">血糖：</label>
+            <input type="text" class="form-control" name="glucose" placeholder="血糖">
+        </div>
+        <div class="form-group">
+            <label class="label-left">血压：</label>
+            <input type="text" class="form-control" name="bloodpressure" placeholder="血压">
+        </div>
+        <div class="form-group">
+            <label class="label-left">皮脂：</label>
+            <input type="text" class="form-control" name="skinthickness" placeholder="皮脂">
+        </div>
+        <div class="form-group">
+            <label class="label-left">胰岛素：</label>
+            <input type="text" class="form-control" name="insulin" placeholder="胰岛素">
+        </div>
+        <div class="form-group">
+            <label class="label-left">BMI：</label>
+            <input type="text" class="form-control" name="bmi" placeholder="BMI">
+        </div>
+        <div class="form-group">
+            <label class="label-left">糖尿病家庭指数：</label>
+            <input type="text" class="form-control" name="diabetespedigreefunction" placeholder="糖尿病家庭指数">
+        </div>
+        <div class="form-group">
+            <label class="label-left">年龄：</label>
+            <input type="text" class="form-control" name="age" placeholder="年龄">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-default">LBFGS梯度法预测</button>
+    </form>
 </div>
 <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
